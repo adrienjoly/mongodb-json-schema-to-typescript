@@ -5,6 +5,7 @@ import {JSONSchema, SchemaType} from './types/JSONSchema'
  * Duck types a JSONSchema schema or property to determine which kind of AST node to parse it into.
  */
 export function typeOfSchema(schema: JSONSchema): SchemaType {
+  if (schema.bsonType === 'date') return 'BSON_DATE'
   if (schema.tsType) return 'CUSTOM_TYPE'
   if (schema.allOf) return 'ALL_OF'
   if (schema.anyOf) return 'ANY_OF'
@@ -14,7 +15,7 @@ export function typeOfSchema(schema: JSONSchema): SchemaType {
   if (schema.enum && schema.tsEnumNames) return 'NAMED_ENUM'
   if (schema.enum) return 'UNNAMED_ENUM'
   if (schema.$ref) return 'REFERENCE'
-  switch (schema.type) {
+  switch (schema.type || schema.bsonType) {
     case 'string':
       return 'STRING'
     case 'number':

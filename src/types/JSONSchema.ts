@@ -3,7 +3,7 @@ import { JSONSchema4, JSONSchema4TypeName } from 'json-schema'
 export type SchemaType = 'ALL_OF' | 'UNNAMED_SCHEMA' | 'ANY' | 'ANY_OF'
   | 'BOOLEAN' | 'NAMED_ENUM' | 'NAMED_SCHEMA' | 'NULL' | 'NUMBER' | 'STRING'
   | 'OBJECT' | 'ONE_OF' | 'TYPED_ARRAY' | 'REFERENCE' | 'UNION' | 'UNNAMED_ENUM'
-  | 'UNTYPED_ARRAY' | 'CUSTOM_TYPE'
+  | 'UNTYPED_ARRAY' | 'CUSTOM_TYPE' | 'BSON_DATE'
 
 export type JSONSchemaTypeName = JSONSchema4TypeName
 
@@ -16,6 +16,10 @@ export interface JSONSchema extends JSONSchema4 {
    * schema extension to support custom types
    */
   tsType?: string
+  /**
+   * schema extension to support BSON types used by MongoDB
+   */
+  bsonType?: string
 }
 
 // const SCHEMA_PROPERTIES = [

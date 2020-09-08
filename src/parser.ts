@@ -115,6 +115,13 @@ function parseNonLiteral(
         standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
         type: 'BOOLEAN'
       })
+    case 'BSON_DATE':
+      return set({
+        comment: schema.description,
+        keyName,
+        standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
+        type: 'BSON_DATE'
+      })
     case 'CUSTOM_TYPE':
       return set({
         comment: schema.description,

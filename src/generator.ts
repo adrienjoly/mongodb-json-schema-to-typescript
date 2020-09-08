@@ -284,6 +284,8 @@ function generateRawType(ast: AST, options: Options): string {
       return generateSetOperation(ast, options)
     case 'CUSTOM_TYPE':
       return ast.params
+    case 'BSON_DATE':
+      return 'Date'
   }
 }
 

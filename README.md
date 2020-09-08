@@ -6,6 +6,8 @@
 
 > Compile json schema to typescript typings
 
+This fork also supports some `bsonType` types: `Date` or fallback to usual values for `type`.
+
 ## Example
 
 Input:
