@@ -1,10 +1,10 @@
 {
-  "name": "json-schema-to-typescript",
+  "name": "mongodb-json-schema-to-typescript",
   "version": "9.1.1",
-  "description": "compile json schema to typescript typings",
+  "description": "compile mongodb json schema to typescript typings",
   "main": "dist/src/index.js",
   "bin": {
-    "json2ts": "dist/src/cli.js"
+    "mongodb-json-schema-to-typescript": "dist/src/cli.js"
   },
   "typings": "dist/src/index.d.ts",
   "engines": {
@@ -26,9 +26,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bcherny/json-schema-to-typescript.git"
+    "url": "git+https://github.com/adrienjoly/mongodb-json-schema-to-typescript.git"
   },
   "keywords": [
+    "mongodb",
+    "bson",
     "json",
     "schema",
     "typescript",
@@ -39,12 +41,7 @@
     "typing",
     "share"
   ],
-  "author": "Boris Cherny <boris@performancejs.com> (http://performancejs.com/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bcherny/json-schema-to-typescript/issues"
-  },
-  "homepage": "https://github.com/bcherny/json-schema-to-typescript#readme",
   "dependencies": {
     "@types/json-schema": "^7.0.4",
     "cli-color": "^2.0.0",
