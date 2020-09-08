@@ -1,4 +1,4 @@
-import {deburr, isPlainObject, mapValues, trim, upperFirst} from 'lodash'
+import {isPlainObject, mapValues, trim, upperFirst} from 'lodash'
 import {basename, dirname, extname, join, normalize, sep} from 'path'
 import {JSONSchema} from './types/JSONSchema'
 
@@ -154,10 +154,10 @@ export function toSafeString(string: string) {
   // identifiers in javaScript/ts:
   // First character: a-zA-Z | _ | $
   // Rest: a-zA-Z | _ | $ | 0-9
+  // EDIT: Actually, it's a bit more complicated than that: https://mathiasbynens.be/notes/javascript-identifiers
 
   return upperFirst(
-    // remove accents, umlauts, ... by their basic latin letters
-    deburr(string)
+    string
       // replace chars which are not valid for typescript identifiers with whitespace
       .replace(/(^\s*[^\p{Letter}_$])|([^\p{Letter}_$\d])/gu, ' ')
       // uppercase leading underscores followed by lowercase
