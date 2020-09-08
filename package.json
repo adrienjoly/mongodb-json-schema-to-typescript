@@ -1,6 +1,6 @@
 {
   "name": "mongodb-json-schema-to-typescript",
-  "version": "9.2.0",
+  "version": "9.2.1",
   "description": "compile mongodb json schema to typescript typings",
   "main": "dist/src/index.js",
   "bin": {
@@ -19,6 +19,7 @@
     "tdd": "concurrently -r -p '' -k 'npm run watch' 'npm run watch:test'",
     "test": "ava --timeout=300s --verbose",
     "stresstest": "seq 1 10 | xargs -I{} npm test",
+    "prepare": "npm run build",
     "prepublishOnly": "npm test",
     "pretest": "npm run lint && npm run build",
     "watch": "tsc -w",
