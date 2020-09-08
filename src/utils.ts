@@ -159,15 +159,15 @@ export function toSafeString(string: string) {
     // remove accents, umlauts, ... by their basic latin letters
     deburr(string)
       // replace chars which are not valid for typescript identifiers with whitespace
-      .replace(/(^\s*[^\p{Letter}_$])|([^\p{Letter}_$\d])/gi, ' ')
+      .replace(/(^\s*[^\p{Letter}_$])|([^\p{Letter}_$\d])/gu, ' ')
       // uppercase leading underscores followed by lowercase
-      .replace(/^_\p{Lowercase_Letter}/g, match => match.toUpperCase())
+      .replace(/^_\p{Lowercase_Letter}/gu, match => match.toUpperCase())
       // remove non-leading underscores followed by lowercase (convert snake_case)
-      .replace(/_\p{Lowercase_Letter}/g, match => match.substr(1, match.length).toUpperCase())
+      .replace(/_\p{Lowercase_Letter}/gu, match => match.substr(1, match.length).toUpperCase())
       // uppercase letters after digits, dollars
-      .replace(/([\d$]+\p{Letter})/g, match => match.toUpperCase())
+      .replace(/([\d$]+\p{Letter})/gu, match => match.toUpperCase())
       // uppercase first letter after whitespace
-      .replace(/\s+(\p{Letter})/g, match => trim(match.toUpperCase()))
+      .replace(/\s+(\p{Letter})/gu, match => trim(match.toUpperCase()))
       // remove remaining whitespace
       .replace(/\s/g, '')
   )
