@@ -119,7 +119,6 @@ function parseNonLiteral(
       return set({
         comment: schema.description,
         keyName,
-        params: schema.bsonType!,
         standaloneName: standaloneName(schema, keyNameFromDefinition, usedNames),
         type: 'BSON_DATE'
       })

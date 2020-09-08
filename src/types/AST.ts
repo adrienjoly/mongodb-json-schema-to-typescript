@@ -123,7 +123,6 @@ export interface TCustomType extends AbstractAST {
 
 export interface TBsonDate extends AbstractAST {
   type: 'BSON_DATE'
-  params: string
 }
 
 ////////////////////////////////////////////     literals
