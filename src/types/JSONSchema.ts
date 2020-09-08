@@ -16,6 +16,10 @@ export interface JSONSchema extends JSONSchema4 {
    * schema extension to support custom types
    */
   tsType?: string
+  /**
+   * schema extension to support BSON types used by MongoDB
+   */
+  bsonType?: string
 }
 
 // const SCHEMA_PROPERTIES = [
