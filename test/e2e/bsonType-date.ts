@@ -1,6 +1,6 @@
 export const input = {
   title: 'BSON Date',
-  bsonType: 'object',
+  type: 'object', // TODO: bsonType: 'object',
   properties: {
     date: {
       bsonType: 'date'
