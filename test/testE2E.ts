@@ -52,7 +52,10 @@ function runOne(exports: TestCase, name: string) {
     } else if (exports.output) {
       t.deepEqual(await compile(exports.input, stripExtension(name), exports.options), exports.output)
     } else {
-      t.snapshot(await compile(exports.input, stripExtension(name), exports.options))
+      t.snapshot(
+        await compile(exports.input, stripExtension(name), exports.options),
+        `Expected output to match snapshot for e2e test: ${name}`
+      )
     }
   })
 }
