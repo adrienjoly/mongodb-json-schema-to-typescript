@@ -1,3 +1,5 @@
+** NOT MAINTAINED -- PLEASE DO NOT USE **
+
 # mongodb-json-schema-to-typescript
 
 Transform MongoDB-compliant JSON Schema files to TypeScript.
