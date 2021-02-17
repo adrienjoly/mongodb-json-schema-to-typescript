@@ -1,5 +1,7 @@
 ** NOT MAINTAINED -- PLEASE DO NOT USE **
 
+(for more context, see https://github.com/signaux-faibles/opensignauxfaibles/pull/317/#discussion_r576335509)
+
 # mongodb-json-schema-to-typescript
 
 Transform MongoDB-compliant JSON Schema files to TypeScript.
